@@ -21,6 +21,7 @@ module bsg_cache_to_axi
     ,parameter `BSG_INV_PARAM(axi_id_width_p) // 6
     ,parameter `BSG_INV_PARAM(axi_data_width_p)
     ,parameter `BSG_INV_PARAM(axi_burst_len_p)
+    ,parameter `BSG_INV_PARAM(axi_burst_type_p)
 
     ,parameter lg_num_cache_lp=`BSG_SAFE_CLOG2(num_cache_p)
     ,parameter dma_pkt_width_lp=`bsg_cache_dma_pkt_width(addr_width_p)
@@ -196,6 +197,7 @@ module bsg_cache_to_axi
     ,.axi_id_width_p(axi_id_width_p)
     ,.axi_data_width_p(axi_data_width_p)
     ,.axi_burst_len_p(axi_burst_len_p)
+    ,.axi_burst_type_p(axi_burst_type_p)
   ) axi_rx (
     .clk_i(clk_i)
     ,.reset_i(reset_i)
@@ -240,6 +242,7 @@ module bsg_cache_to_axi
     ,.axi_id_width_p(axi_id_width_p)
     ,.axi_data_width_p(axi_data_width_p)
     ,.axi_burst_len_p(axi_burst_len_p)
+    ,.axi_burst_type_p(axi_burst_type_p)
   ) axi_tx (
     .clk_i(clk_i)
     ,.reset_i(reset_i)
